@@ -74,7 +74,7 @@ public Plugin myinfo = {
 	name = "BossHUD",
 	author = "AntiTeal, Cloud Strife, maxime1907",
 	description = "Show the health of bosses and breakables",
-	version = "3.8.7",
+	version = "3.8.8",
 	url = "antiteal.com"
 };
 
@@ -205,11 +205,6 @@ public void OnLibraryRemoved(const char[] name)
 stock void VerifyNatives()
 {
 	bDynamicAvailable = g_bDynamicChannels && CanTestFeatures() && GetFeatureStatus(FeatureType_Native, "GetDynamicChannel") == FeatureStatus_Available;
-}
-
-public void OnPluginEnd()
-{
-	Cleanup();
 }
 
 public void Event_OnRoundEnd(Handle event, const char[] name, bool dontBroadcast)
